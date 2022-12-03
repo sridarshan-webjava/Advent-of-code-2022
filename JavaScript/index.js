@@ -56,7 +56,6 @@ const getTypeAndPriorityForRucksack = (inputs, priorityMap) => {
   }
 
   for (const mapEntry of rucksackItems.entries()) {
-    console.log(mapEntry);
     if (mapEntry[1] > maxCountOfItem) {
       priorityItem = mapEntry[0];
       maxCountOfItem = mapEntry[1];
@@ -83,7 +82,7 @@ fs.readFile("../inputs.txt", "utf-8", (err, data) => {
     ]);
     return currentSum + getTypeAndPriorityForRucksack(itemsArray, priorityMap);
   }, 0);
-  console.log(priorityItemsSum);
+  console.log("Sum of priority items: ", priorityItemsSum);
 
   //   Get priority sum for a group of items in the array
   let priorityItemsSumForGroup = 0;
@@ -94,5 +93,5 @@ fs.readFile("../inputs.txt", "utf-8", (err, data) => {
       priorityMap
     );
   }
-  console.log(priorityItemsSumForGroup);
+  console.log("Sum of priority items (groups): ", priorityItemsSumForGroup);
 });
